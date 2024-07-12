@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  api-service:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: api-container
+    
+    ports:
+      - 8000:4000
+    
+    volumes:
+      - ./api:/app
+      - ./app/node_module
+
+    networks:
+      - demo-networks
+
+networks:
+  demo-networks:
+    driver: bridge

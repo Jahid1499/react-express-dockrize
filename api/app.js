@@ -22,6 +22,8 @@ app.get('/', (req, res) => {
   ])
 })
 
+const PORT = process.env.PORT || 4000
+
 app.listen(4000, () => {
-  console.log('listening for requests on port 4000')
+  console.log(`listening for requests on port ${PORT}`)
 })
